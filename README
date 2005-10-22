@@ -1,0 +1,51 @@
+NAME
+
+LWP::LastURI - routine for getting last URI visited despite redirects
+
+SYNOPSIS
+
+    use LWP::LastURI;
+
+    my $agent = new WWW::Mechanize;
+    
+    # not that LWP user agents such as WWW::Mechanize may do redirection that 
+    # will not be reflected in the return value of $agent->uri. 
+    # This module offers a way to see the final URI after redirection.
+    
+    ... do stuff that involves redirection
+    
+    my $redirected_final = LWP::LastURI::last_uri;
+    my $redirected_final_post = LWP::LastURI::last_uri('POST');
+    my $redirected_final_get  = LWP::LastURI::last_uri('GET');
+
+DESCRIPTION
+
+If you want to see just what LWP is doing during a redirect, this program makes 
+available a trace of sites visited. After a redirect, the site finally visited 
+last can be retrived via a call to LWP::Debug::LastURI::last_uri. The optional 
+argument can specify whether the latest 'GET' or 'POST' request is wanted. 
+Otherwise, either a GET or POST uri is returned, whichever was latest. 
+
+COPYRIGHT 
+
+Copyright (c) 2005 William Herrera
+
+This library is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+AUTHOR
+
+William Herrera <wherrera@skylightview.com>
+
+
+
+
+To install the module...
+
+perl Makefile.PL
+make
+make test
+make install
+
+
+If you are on a windows box you should use 'nmake' rather than 'make'.
