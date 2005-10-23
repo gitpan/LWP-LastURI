@@ -3,7 +3,7 @@ package LWP::LastURI;
 use strict;
 no warnings;
 use vars qw($VERSION);
-$VERSION = 0.01;
+$VERSION = 0.02;
 
 use LWP::Debug;
 
@@ -22,7 +22,7 @@ sub last_uri {
         return $1 if( 
             ($type eq 'GET'  and $msg =~ m#GET\s+(https?://\S+)#) or
             ($type eq 'POST' and $msg =~ m#POST\s+(https?://\S+)#) or
-            ($type eq 'ALL'  and $msg =~ m#(:?GET|POST)\s+(https?://\S+)#)
+            ($type eq 'ALL'  and $msg =~ m#(?:GET|POST)\s+(https?://\S+)#)
         );
     }
     return;
