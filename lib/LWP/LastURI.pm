@@ -3,7 +3,7 @@ package LWP::LastURI;
 use strict;
 no warnings;
 use vars qw($VERSION);
-$VERSION = 0.02;
+$VERSION = 0.03;
 
 use LWP::Debug;
 
@@ -56,7 +56,7 @@ LWP::LastURI - routine for getting last URI visited despite redirects
 
 If you want to see just what LWP is doing during a redirect, this program makes 
 available a trace of sites visited. After a redirect, the site finally visited 
-last can be retrived via a call to LWP::Debug::LastURI::last_uri. The optional 
+last can be retrived via a call to LWP::LastURI::last_uri. The optional 
 argument can specify whether the latest 'GET' or 'POST' request is wanted. 
 Otherwise, either a GET or POST uri is returned, whichever was latest. 
 

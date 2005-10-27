@@ -1,5 +1,11 @@
-Revision history for Perl module LWP::UserAgent::iTMS_Client
+Revision history for Perl module LWP::LastURI
 
 0.01 Sat Oct 22 2005
     - first release 
 
+0.02 Sat Oct 22 2005
+    - fix typo in regex
+
+0.03 Tue Oct 25 2005
+    - pod corrections
+    
