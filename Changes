@@ -9,3 +9,5 @@ Revision history for Perl module LWP::LastURI
 0.03 Tue Oct 25 2005
     - pod corrections
     
+0.04 Sun 20 April 2008
+    - pod changes, tests for pod

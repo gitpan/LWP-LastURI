@@ -3,7 +3,7 @@ package LWP::LastURI;
 use strict;
 no warnings;
 use vars qw($VERSION);
-$VERSION = 0.03;
+$VERSION = 0.04;
 
 use LWP::Debug;
 
@@ -60,11 +60,23 @@ last can be retrived via a call to LWP::LastURI::last_uri. The optional
 argument can specify whether the latest 'GET' or 'POST' request is wanted. 
 Otherwise, either a GET or POST uri is returned, whichever was latest. 
 
+Note that this module was written to work around a bug in certain versions 
+of WWW::Mechanize prior to version 1.20.  If you use a more recent 
+version of WWW::Mechanize, after version 1.19, this module is now redundant 
+unless you using it for some other purpose than just getting the last 
+redirected URI.
+
 =head1 IMPLEMENTATION
+
+=over 4
+
+=item B<last_uri>
 
 This module works by using LWP::Debug to push all GET and POST requests onto a 
 static array. There is only one stack of such requests for all of LWP's HTTP
 and/or HTTPS requests. 
+
+=back
 
 =head1 SEE ALSO
 

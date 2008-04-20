@@ -5,5 +5,7 @@ Todo
 Changes
 lib/LWP/LastURI.pm
 t/01_test.t
+t/pod.t
+t/pod_coverage.t
 Makefile.PL
 META.yml                                 Module meta-data (added by MakeMaker)
